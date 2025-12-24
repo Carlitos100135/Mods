@@ -1,0 +1,3 @@
+displayName = Jujutsu dos kaboco
+author = Carlitos100135
+version = 0.1
