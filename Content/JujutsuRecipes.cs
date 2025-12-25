@@ -12,10 +12,15 @@ namespace Jujutsu100135
 
             recipe.AddIngredient(ItemID.IronBar, 10);
             recipe.AddIngredient(ItemID.Wood, 5);
-
             recipe.AddTile(TileID.Anvils);
-
             recipe.Register();
+
+
+            recipe = Recipe.Create(ModContent.ItemType<Content.Items.Weapons.IronCleaver>(), 1) ;
+            recipe.AddIngredient(ItemID.Wood, 5);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
+
         }
     }
 }
