@@ -1,0 +1,15 @@
+Mods: {
+	Jujutsu100135: {
+		Items: {
+			IronCleaver: {
+				DisplayName: Iron Cleaver
+				Tooltip: Just a simple iron Cleaver
+			}
+
+			BlackBow: {
+				DisplayName: Black Bow
+				Tooltip: ""
+			}
+		}
+	}
+}

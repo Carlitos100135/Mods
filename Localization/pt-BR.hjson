@@ -1,0 +1,15 @@
+Mods: {
+	Jujutsu100135: {
+		Items: {
+			IronCleaver: {
+				DisplayName: Cutelo de Ferro
+				Tooltip: Um simples cutelo de ferro
+			}
+
+			BlackBow: {
+				DisplayName: Black Bow
+				Tooltip: um arco negro, descolado e razoavelmente forte
+			}
+		}
+	}
+}

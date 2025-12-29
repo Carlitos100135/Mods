@@ -1,6 +1,9 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 
 namespace Jujutsu100135.Content.Items.Weapons
 {
@@ -8,19 +11,38 @@ namespace Jujutsu100135.Content.Items.Weapons
     {
         public override void SetDefaults()
         {
-            Item.damage = 15;                                   //dano
-            Item.DamageType = DamageClass.Melee;                //classe do dano
-            Item.width = 40;                                    //largura da hitbox 
-            Item.height = 40;                                   //altura da hitbox
-            Item.useTime = 20;                                  //coldown entre uso
-            Item.useAnimation = 20;                             //tempo da animação
-            Item.useStyle = ItemUseStyleID.Swing;               //jeito q o item é usado, balançar, perfurar, etc
-            Item.knockBack = 5f;                                //knokback do item
-            Item.value = Item.buyPrice(silver: 75);             //preço padrão de compra do item    
-            Item.rare = ItemRarityID.White;                     //cor da raridade do item
-            Item.UseSound = SoundID.Item1;                      //som q o item vai usar       
-            Item.autoReuse = true;                              //se o item funciona em loop segurando botão
-            Item.scale = 1.2f;                                  //escala do png do item no jogo
+            Item.damage = 15;
+            Item.DamageType = DamageClass.Melee;
+            Item.width = 40;
+            Item.height = 40;
+            Item.useTime = 20;
+            Item.useAnimation = 20;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.knockBack = 5f;
+            Item.value = Item.buyPrice(silver: 75);
+            Item.rare = ModContent.RarityType<SpecialGradeRarity>();
+            Item.UseSound = SoundID.Item1;
+            Item.autoReuse = true;
+            Item.scale = 1.2f;
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            // Descrição de destaque (abaixo do nome)
+            tooltips.Insert(1, new TooltipLine(Mod, "Flavor", "Special Grade"));
+            float pulse = (float)(Math.Sin(Main.GlobalTimeWrappedHourly * 4f) * 0.5f + 0.5f);
+            Color darkRed = new Color(120, 0, 0);
+            Color brightRed = new Color(255, 50, 50);
+
+            Color pulseColor = Color.Lerp(darkRed, brightRed, pulse);
+
+            foreach (var line in tooltips)
+            {
+                if (line.Mod == Mod.Name && line.Name == "Flavor")
+                {
+                    line.OverrideColor = pulseColor;
+                }
+            }
         }
     }
 }
