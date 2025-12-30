@@ -16,7 +16,13 @@ namespace Jujutsu100135
             recipe.Register();
 
             recipe = Recipe.Create(ModContent.ItemType<Content.Items.Weapons.BlackBow>(),1);
-            recipe.AddIngredient(ItemID.Wood, 15);
+            recipe.AddIngredient(ItemID.Shadewood, 15);
+            recipe.AddIngredient(ItemID.Silk, 8);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
+
+            recipe = Recipe.Create(ModContent.ItemType<Content.Items.Weapons.BlackBow>(),1);
+            recipe.AddIngredient(ItemID.Ebonwood, 15);
             recipe.AddIngredient(ItemID.Silk, 8);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();

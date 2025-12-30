@@ -11,5 +11,7 @@ Mods: {
 				Tooltip: um arco negro, descolado e razoavelmente forte
 			}
 		}
+
+		// Projectiles.BlackBowHeldProjectile.DisplayName: Black Bow Held Projectile
 	}
 }

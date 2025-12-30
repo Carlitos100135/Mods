@@ -11,5 +11,7 @@ Mods: {
 				Tooltip: ""
 			}
 		}
+
+		Projectiles.BlackBowHeldProjectile.DisplayName: Black Bow Held Projectile
 	}
 }
